@@ -36,6 +36,17 @@ class SortTypes:
                     array[j] , array[j + 1] = array[j + 1], array[j]
         yield array
 
+    def selectionSort(range_):
+        array   = list(
+                    range(0,range_)
+                    );shuffle(array)
+        for i in range(range_):
+            minValue = i
+            for j in range(i+1, range_):
+                if array[minValue] > array[j]: minValue = j
+            array[i], array[minValue] = array[minValue], array[i]
+        yield array
+
     def radixSort(range_, base=10):
         array   =   list(
                         range(range_)
@@ -80,27 +91,34 @@ class SortTypes:
 
 def main():
     insertionSorting_   = SortTypes.insertionSorting;\
-        bubbleSort_     = SortTypes.bubbleSort;\
-            radixSort_  = SortTypes.radixSort
+        selectionSort_  = SortTypes.selectionSort;\
+            bubbleSort_ = SortTypes.bubbleSort;\
+            radixSort_  = SortTypes.radixSort;\
+                RANGE   = 10 ** 6
     File.write(
         nums = bubbleSort_(
-            range_ = 10 ** 6
+            range_ = RANGE
             ),\
         typeOfSorting = bubbleSort_.__name__
         )
     File.write(
         nums = insertionSorting_(
-            range_ = 10 ** 6
+            range_ = RANGE
             ),\
         typeOfSorting = insertionSorting_.__name__
         )
     File.write(
         nums = radixSort_(
-            range_ = 10 ** 6
+            range_ = RANGE
             ),\
         typeOfSorting = radixSort_.__name__
+        )
+    File.write(
+        nums = selectionSort_(
+            range_ = RANGE
+            ),\
+        typeOfSorting = selectionSort_.__name__
         )
 
 if __name__ == '__main__':
     main()
-    # pass
