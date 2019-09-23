@@ -1,4 +1,4 @@
-
+package com.company;
 /*
     4f 4f 50 20 69 73 20 61 20 70 69 65 63 65 20 6f 66 20 73 68 69 74
 */
@@ -26,7 +26,7 @@ public class Main{
     public static void main(String[] args){
         List<Float> data = new ArrayList<>();
 
-        String titleString = "Calculation result: %.6f%n";
+        String titleString = "Calculation result: %.6f%n\n";
         Scanner readLine = new Scanner(System.in);
         for (int i = 0; i < range; i++) {
             System.out.print("Write some data for calculate: \t");
@@ -64,18 +64,15 @@ public class Main{
             }
         }
         MyWindowApp app = new MyWindowApp();
+        JPanel MyPanel = new JPanel();
         int i = 0;
-        int y = 0;
         JLabel[] labels = new JLabel[range];
         System.out.println(result);
         while (i<range){
             labels[i] = new JLabel(String.format(titleString, result.get(i)));
-            labels[i].setBounds(20,y, width,10);
-            app.add(labels[i]);
-            y+= 20;
-
+            MyPanel.add(labels[i]);
             i++;
         }
-
+        app.add(MyPanel);
     }
 }
