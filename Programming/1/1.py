@@ -21,13 +21,14 @@ class File:
             result.write("\n--- %s seconds ---" % (time.time() - start_time))
 
     def createFolder(result,presonalLink):
-        try:
-            os.mkdir(result)
-        except FileExistsError:
-            return True
+        try:                    os.mkdir(result)
+        except FileExistsError: return True
         else:
-            print (f"Successfully created the directory {result}")
-            return False
+            print (
+                f"""
+                    Successfully created the directory {result}
+                    Please write to the developer: {presonalLink}
+                """);           return False
 
 class SortTypes:
     def prefixSum(array):
