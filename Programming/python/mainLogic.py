@@ -1,36 +1,8 @@
-import os
-""" Change directory to current """
-os.chdir(
-    os.path.realpath(
-        os.path.join(
-            os.getcwd(),\
-            os.path.dirname(__file__)
-            )
-        )
-    )
-
 from random import shuffle
 from math import log10
 
-class File:
-    def write(nums, typeOfSorting):
-        import time
-        start_time  = time.time()
-        with open(f'{typeOfSorting}.txt','w') as result:
-            for num in nums: result.write(str(num))
-            result.write("\n--- %s seconds ---" % (time.time() - start_time))
 
-    def createFolder(result,presonalLink):
-        try:                    os.mkdir(result)
-        except FileExistsError: return True
-        else:
-            print (
-                f"""
-                    Successfully created the directory {result}
-                    Please write to the developer: {presonalLink}
-                """);           return False
-
-class SortTypes:
+class Sortings:
     def prefixSum(array):
         for i in range(1, len(array)): array[i] += array[i-1]
         return array
@@ -75,7 +47,7 @@ class SortTypes:
             for elem in array:
                 count[\
                         getDigit(elem, base, pos)] += 1
-            count = SortTypes.prefixSum(count)
+            count = Sortings.prefixSum(count)
             for revElem in reversed(array):
                 digit = getDigit(revElem, base, pos)
                 count[digit] -= 1
@@ -98,43 +70,3 @@ class SortTypes:
                 j -= 1
             array[j + 1] = key
         yield array
-
-def main(resultFolder: str = "result") -> str:
-    File.createFolder(
-        resultFolder,
-        presonalLink = "t.me/alanlatte"
-    ); os.chdir(resultFolder)
-
-    insertionSorting_   = SortTypes.insertionSorting;\
-        selectionSort_  = SortTypes.selectionSort;\
-            bubbleSort_ = SortTypes.bubbleSort;\
-            radixSort_  = SortTypes.radixSort;\
-                RANGE   = 10 ** 4
-    File.write(
-        nums = bubbleSort_(
-            range_ = RANGE
-            ),\
-        typeOfSorting = bubbleSort_.__name__
-        )
-    File.write(
-        nums = insertionSorting_(
-            range_ = RANGE
-            ),\
-        typeOfSorting = insertionSorting_.__name__
-        )
-    File.write(
-        nums = radixSort_(
-            range_ = RANGE
-            ),\
-        typeOfSorting = radixSort_.__name__
-        )
-    File.write(
-        nums = selectionSort_(
-            range_ = RANGE
-            ),\
-        typeOfSorting = selectionSort_.__name__
-        )
-
-if __name__ == '__main__':
-    main()
-#DONE!
