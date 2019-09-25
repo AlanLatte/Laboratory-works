@@ -35,7 +35,7 @@ public class Main{
         calculate result = sendData(data);
 
         if (Arrays.equals(new List[]{result.z1}, new List[]{result.z2})){
-            GUI(titleString, result.z1);
+            GUI(titleString, result.z1, result.z2);
             System.out.printf(Locale.ENGLISH,titleString, result.z1);
         }else{
             System.err.println("SOME ERROR HAS EXISTS");
@@ -51,7 +51,11 @@ public class Main{
         }
         return new calculate(z1,z2);
     }
-    private static void GUI(String titleString, List<Float> result){
+    private static void GUI(String titleString, List<Float> z1,List<Float> z2){
+
+        Toolkit toolkit = Toolkit.getDefaultToolkit();
+        Dimension dimension=toolkit.getScreenSize();
+
         class MyWindowApp extends JFrame{
             private MyWindowApp(){
                 super("Calculation result");
@@ -61,18 +65,27 @@ public class Main{
                 setVisible(true);
                 requestFocus();
                 toFront();
+                setBounds(dimension.width/2-150,dimension.height/2-150,300,300);
             }
         }
+
         MyWindowApp app = new MyWindowApp();
         JPanel MyPanel = new JPanel();
         int i = 0;
-        JLabel[] labels = new JLabel[range];
-        System.out.println(result);
+        JLabel[] labels1 = new JLabel[range];
+        JLabel[] labels2 = new JLabel[range];
+        System.out.println(z1);
         while (i<range){
-            labels[i] = new JLabel(String.format(titleString, result.get(i)));
-            MyPanel.add(labels[i]);
+            labels1[i] = new JLabel(String.format(titleString, z1.get(i)));
+            MyPanel.add(labels1[i]);
             i++;
         }
+        i = 0;
+        do {
+            labels2[i] = new JLabel(String.format(titleString, z2.get(i)));
+            MyPanel.add(labels2[i]);
+            i++;
+        } while (i<range);
         app.add(MyPanel);
     }
 }
