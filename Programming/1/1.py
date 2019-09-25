@@ -20,6 +20,15 @@ class File:
             for num in nums: result.write(str(num))
             result.write("\n--- %s seconds ---" % (time.time() - start_time))
 
+    def createFolder(result,presonalLink):
+        try:
+            os.mkdir(result)
+        except FileExistsError:
+            return True
+        else:
+            print (f"Successfully created the directory {result}")
+            return False
+
 class SortTypes:
     def prefixSum(array):
         for i in range(1, len(array)): array[i] += array[i-1]
@@ -89,12 +98,17 @@ class SortTypes:
             array[j + 1] = key
         yield array
 
-def main():
+def main(resultFolder: str = "result") -> str:
+    File.createFolder(
+        resultFolder,
+        presonalLink = "t.me/alanlatte"
+    ); os.chdir(resultFolder)
+
     insertionSorting_   = SortTypes.insertionSorting;\
         selectionSort_  = SortTypes.selectionSort;\
             bubbleSort_ = SortTypes.bubbleSort;\
             radixSort_  = SortTypes.radixSort;\
-                RANGE   = 10 ** 6
+                RANGE   = 10 ** 4
     File.write(
         nums = bubbleSort_(
             range_ = RANGE
