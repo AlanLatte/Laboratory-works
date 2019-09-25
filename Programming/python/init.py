@@ -1,10 +1,11 @@
 import writeToFile
 import mainLogic
 import os
+
 def main(resultFolder: str = "result") -> str:
 
-    File        = writeToFile.FileOperation
-    SortTypes   =   mainLogic.Sortings
+    SortTypes   =   mainLogic.Sortings;\
+        File    = writeToFile.FileOperation
 
     File.createFolder(
         resultFolder,
