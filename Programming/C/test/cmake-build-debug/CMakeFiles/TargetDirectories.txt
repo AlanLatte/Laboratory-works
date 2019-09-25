@@ -1,3 +1,0 @@
-F:/GitProjects/Laboratory-works/Programming/C/test/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-F:/GitProjects/Laboratory-works/Programming/C/test/cmake-build-debug/CMakeFiles/test.dir
-F:/GitProjects/Laboratory-works/Programming/C/test/cmake-build-debug/CMakeFiles/edit_cache.dir
