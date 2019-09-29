@@ -3,6 +3,7 @@ package com.company;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class myForm {
     private JPanel myFrame;
@@ -28,6 +29,15 @@ public class myForm {
             }
         });
 
+        xTextField.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+                    String result = calculate(Float.parseFloat(xTextField.getText()), Float.parseFloat(yTextField.getText()));
+                    showResult(result);
+                }
+            }
+        });
 
         yTextField.addKeyListener(new KeyAdapter() {
             @Override
@@ -45,17 +55,17 @@ public class myForm {
     }
 
     private String calculate(float x, float y) {
-        String result = "";
+        AtomicReference<String> result = new AtomicReference<>("");
         if (x > 0 && y > 0) {
             if ((x * x >= (0.5 - y * y)) && (x * x <= 1.0 - y * y)) {
-                result = "TARGET!";
+                result.set("TARGET!");
             } else {
-                result = "PAST!";
+                result.set("PAST!");
             }
         } else {
-            result = "PAST!";
+            result.set("PAST!");
         }
-        return result;
+        return result.get();
     }
 
     public static void main(String[] args) {
