@@ -26,3 +26,11 @@ class FileOperation:
                     Successfully created the directory {result}
                     Please write to the developer: {presonalLink}
                 """);           return False
+
+class ArrayOperation:
+    def createArray(range_):
+        from random import shuffle
+        array   =   list(
+                        range(range_)
+                        );shuffle(array)
+        return array
