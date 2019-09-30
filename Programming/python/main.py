@@ -7,13 +7,19 @@ from os import chdir
 def main(resultFolder: str = "result") -> str:
     Array   =   ArrayOperation
     File    =   FileOperation
-    RANGE   =   10 ** 2
+    RANGE   =   10 ** 3
     File.createFolder(
         resultFolder,
         presonalLink = "t.me/alanlatte"
     );chdir(resultFolder)
 
-
+    File.write(
+        nums = bstSort(
+            array   =   Array.createArray(
+                RANGE)
+            ),\
+        typeOfSorting = bstSort.__name__
+        )
     File.write(
         nums = bubbleSort(
             array   =    Array.createArray(
