@@ -2,8 +2,6 @@ package com.lab2;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
@@ -14,25 +12,17 @@ public class myForm {
     private JPanel myForm;
     private JTextField textInput;
     private JButton resultButton;
-    private JLabel resultLabel;
     private List<Integer> data = new ArrayList<>();
 
     private myForm() {
-        resultButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                resultLabel.setText(String.valueOf(calculate(data)));
-            }
-
-
-        });
+        resultButton.addActionListener(e -> JOptionPane.showMessageDialog(null, String.valueOf(calculate(data))));
         textInput.addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
                 String readText = textInput.getText();
                 if (e.getKeyCode() == KeyEvent.VK_ENTER) {
                     if (readText.equals("0")) {
-                        resultLabel.setText(String.valueOf(calculate(data)));
+                        JOptionPane.showMessageDialog(null, String.valueOf(calculate(data)));
                         textInput.setText("");
                     } else {
                         data.add(Integer.parseInt(readText));
@@ -47,9 +37,9 @@ public class myForm {
         AtomicReference<StringBuilder> result = new AtomicReference<>(new StringBuilder());
         for (int number :
                 data) {
-            result.get().append("(").append(number).append(" : ");
+            result.get().append("(").append(number).append(" ; ");
             result.get().append(Main.calculate(number));
-            result.get().append("); ");
+            result.get().append("),\n");
 
         }
         return result;
@@ -79,12 +69,9 @@ public class myForm {
      */
     private void $$$setupUI$$$() {
         myForm = new JPanel();
-        myForm.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(2, 2, new Insets(0, 0, 0, 0), -1, -1));
+        myForm.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(1, 2, new Insets(0, 0, 0, 0), -1, -1));
         myForm.setMinimumSize(new Dimension(200, 100));
         myForm.setBorder(BorderFactory.createTitledBorder("calculate"));
-        resultLabel = new JLabel();
-        resultLabel.setText("");
-        myForm.add(resultLabel, new com.intellij.uiDesigner.core.GridConstraints(1, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         resultButton = new JButton();
         resultButton.setText("result");
         myForm.add(resultButton, new com.intellij.uiDesigner.core.GridConstraints(0, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));

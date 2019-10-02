@@ -2,21 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f8044a07-0b87-4a6e-81bc-6cef3aafc031" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../1/src/com/company/Main2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/lab2/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/lab2/myForm.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/lab2/myForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2/com/company/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2/com/company/myForm$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2/com/company/myForm$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2/com/company/myForm$1MyWindowApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2/com/company/myForm$1MyWindowApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2/com/company/myForm$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2/com/company/myForm$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2/com/company/myForm$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2/com/company/myForm$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2/com/company/myForm$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2/com/company/myForm$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2/com/company/myForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2/com/company/myForm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/myForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/myForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/lab2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lab2/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/lab2/myForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lab2/myForm.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/lab2/myForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lab2/myForm.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -154,6 +143,7 @@
       <workItem from="1569733079163" duration="1638000" />
       <workItem from="1569958640462" duration="19000" />
       <workItem from="1569958825822" duration="7593000" />
+      <workItem from="1570018136014" duration="1398000" />
     </task>
     <servers />
   </component>

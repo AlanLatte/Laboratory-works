@@ -1,8 +1,6 @@
 package com.lab2;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Main {
@@ -40,10 +38,12 @@ public class Main {
             }
         }
         AtomicInteger resultValue = new AtomicInteger();
+        Set<Integer> uniqKeys = new TreeSet<Integer>(resultArray);
         for (int i :
-                resultArray) {
+                uniqKeys) {
             resultValue.addAndGet(i);
         }
         return resultValue.get();
     }
+
 }
