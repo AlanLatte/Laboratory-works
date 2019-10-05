@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f8044a07-0b87-4a6e-81bc-6cef3aafc031" name="Default Changelist" comment="" />
+    <list default="true" id="f8044a07-0b87-4a6e-81bc-6cef3aafc031" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../3/.idea/runConfigurations/Main.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../3/.idea/runConfigurations/mytForm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1/out/production/1/com/lab2/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../1/out/production/1/com/lab2/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1/out/production/1/com/lab2/myForm$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../1/out/production/1/com/lab2/myForm$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1/out/production/1/com/lab2/myForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/../1/out/production/1/com/lab2/myForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../3/.idea/vcs.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +35,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
@@ -140,6 +148,7 @@
       <workItem from="1569958825822" duration="7593000" />
       <workItem from="1570018136014" duration="1398000" />
       <workItem from="1570019583490" duration="12000" />
+      <workItem from="1570296297052" duration="250000" />
     </task>
     <servers />
   </component>
