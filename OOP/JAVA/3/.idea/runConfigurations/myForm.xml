@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="mytForm" type="Application" factoryName="Application" nameIsGenerated="true">
-    <option name="MAIN_CLASS_NAME" value="com.lab1.mytForm" />
+  <configuration default="false" name="myForm" type="Application" factoryName="Application" nameIsGenerated="true">
+    <option name="MAIN_CLASS_NAME" value="com.lab1.myForm" />
     <module name="3" />
     <extension name="coverage">
       <pattern>
