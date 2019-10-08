@@ -3,12 +3,11 @@ package com.lab2;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicReference;
 
-import static com.lab2.Main.createMatrix;
-import static com.lab2.Main.searchZeroColumns;
+import static com.lab2.Main.*;
 
 public class myForm {
     private JTextField rowInput;
@@ -29,27 +28,34 @@ public class myForm {
             @Override
             public void keyPressed(KeyEvent e) {
                 if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-                    runApp(Integer.parseInt(rowInput.getText()), Integer.parseInt(columnInput.getText()));
+                    try {
+                        runApp(Integer.parseInt(rowInput.getText()), Integer.parseInt(columnInput.getText()));
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
                 }
             }
         });
-        resultButton.addActionListener(e -> runApp(Integer.parseInt(rowInput.getText()), Integer.parseInt(columnInput.getText())));
+        resultButton.addActionListener(e -> {
+            try {
+                runApp(Integer.parseInt(rowInput.getText()), Integer.parseInt(columnInput.getText()));
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        });
     }
 
 
-    private void runApp(int rows, int columns) {
+    private void runApp(int rows, int columns) throws IOException {
         List<List<Integer>> array = createMatrix(columns, rows);
         HashMap<String, String> resultMap = searchZeroColumns(array, columns);
-        AtomicReference<StringBuilder> resultText = new AtomicReference<>(new StringBuilder());
-        for (var item :
-                array) {
-            resultText.get().append(item).append("\n");
-        }
+        String resultText = readFromFile();
+
         if (resultMap.containsKey("RESULT")) {
-            resultText.get().append(resultMap.get("INDEXES"));
+            resultText += resultMap.get("INDEXES");
             JOptionPane.showMessageDialog(null, resultText);
         } else {
-            resultText.get().append("column with null values not found");
+            resultText += "column with null values not found";
             JOptionPane.showMessageDialog(null, resultText);
         }
         columnInput.setText("");

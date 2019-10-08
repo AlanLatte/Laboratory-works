@@ -1,11 +1,15 @@
 package com.lab2;
 
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.*;
 import java.util.stream.IntStream;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Scanner readLine = new Scanner(System.in);
         System.out.print("Number of rows: ");
         int rows = readLine.nextInt();
@@ -13,11 +17,7 @@ public class Main {
         int columns = readLine.nextInt();
         List<List<Integer>> array = createMatrix(columns, rows);
         HashMap<String, String> resultMap = searchZeroColumns(array, columns);
-
-        for (var row :
-                array) {
-            System.out.println(row);
-        }
+        System.out.println(readFromFile());
         if (resultMap.containsKey("RESULT")){
             System.out.println("Map of HS indexes: " + resultMap.get("INDEXES"));
         }
@@ -46,8 +46,31 @@ public class Main {
         return resultMap;
 
     }
+    private static void WriteToFile(List<List<Integer>> matrix) throws IOException {
+        StringBuilder fileContent = new StringBuilder();
+        String fileName = "matrix.txt";
+        FileOutputStream outputStream = new FileOutputStream(fileName);
 
-    static List<List<Integer>> createMatrix(int columns, int rows) {
+        for (var row :
+                matrix) {
+            fileContent.append(row).append("\n");
+        }
+        byte[] strToBytes = fileContent.toString().getBytes();
+        outputStream.write(strToBytes);
+        outputStream.close();
+    }
+
+    static String readFromFile() throws IOException {
+        String fileName = "matrix.txt";
+        FileInputStream inputStream = new FileInputStream(fileName);
+        StringBuilder result = new StringBuilder();
+        int i;
+        while((i=inputStream.read())!= -1){
+            result.append((char) i);
+        }
+        return result.toString();
+    }
+    static List<List<Integer>> createMatrix(int columns, int rows) throws IOException {
         Random random = new Random();
         List<List<Integer>> matrix = new ArrayList<>();
         for (int i = 0; i < rows; i++) {
@@ -61,6 +84,7 @@ public class Main {
             }
             matrix.add(rowsArray);
         }
+        WriteToFile(matrix);
         return matrix;
     }
 }
