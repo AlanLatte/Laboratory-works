@@ -12,7 +12,12 @@ def main(resultFolder: str = "result") -> str:
         resultFolder,
         presonalLink = "t.me/alanlatte"
     );chdir(resultFolder)
-
+    File.write(
+        nums = lpf(
+            number = 10 ** 10 + 11
+            ),\
+        typeOfSorting = lpf.__name__
+        )
     File.write(
         nums = bstSort(
             array   =   Array.createArray(

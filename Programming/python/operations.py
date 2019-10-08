@@ -23,9 +23,8 @@ class FileOperation:
         else:
             print (
                 f"""
-                    Successfully created the directory {result}
-                    Please write to the developer: {presonalLink}
-                """);           return False
+                    Successfully created the directory {result}.
+                """);
 
 class ArrayOperation:
     def createArray(range_):
