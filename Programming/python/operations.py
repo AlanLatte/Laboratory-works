@@ -10,11 +10,13 @@ os.chdir(
     )
 
 class FileOperation:
-    def write(nums, typeOfSorting):
+    def write(data, typeOfSorting, reqursion = False):
         import time
         start_time  = time.time()
         with open(f'{typeOfSorting}.txt','w') as result:
-            for num in nums: result.write(str(num))
+            if not reqursion:
+                for num in data: result.write(str(num))
+            else: result.write(str(data))
             result.write("\n--- %s seconds ---" % (time.time() - start_time))
 
     def createFolder(result,presonalLink):
@@ -27,9 +29,10 @@ class FileOperation:
                 """);
 
 class ArrayOperation:
-    def createArray(range_):
+    def createArray(range_, search = False):
         from random import shuffle
         array   =   list(
                         range(range_)
-                        );shuffle(array)
+                        )
+        if not search: shuffle(array)
         return array

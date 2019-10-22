@@ -1,10 +1,10 @@
 def binarySearch(array, number):
     if len(array) == 0:
-        return False
+        return 'False'
     else:
         midpoint = len(array)//2
         if array[midpoint]==number:
-            return True
+            return f'{array}\nThe number {number} is on the list. \n Number index: {midpoint} '
         else:
             if number<array[midpoint]:
                 return binarySearch(array[:midpoint],number)
