@@ -30,15 +30,17 @@ void mergeSort(int *a, int l, int r)
 		a[l + step] = tmp[step];
 }
 int main() {
-    printf("input min\n"); int min; scanf("%d", &min);
-    printf("input max\n"); int max; scanf("%d", &max);
-    int *data;
-    srand(
-			time(NULL));
+	setlocale(LC_CTYPE, "");
+
+  printf("input min\n"); int min; scanf("%d", &min);
+  printf("input max\n"); int max; scanf("%d", &max);
+  int *data;
+  srand(
+	time(NULL));
 	int count = 100;
 	while(
 		count < 10000000){
-	    data = malloc(count * sizeof(int));
+    data = malloc(count * sizeof(int));
 		int i;
 		for(i = 0; i < c; ++i) {
 			data[i] = min + rand() % max;

@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <sys/time.h>
 #include <time.h>
+#include <locale.h>
 
 typedef enum {false, true} bool;
 
@@ -36,10 +37,11 @@ void heapSort(int *arr, int n)
 }
 
 int main() {
-    printf("input min value\n"); int min; scanf("%d", &min);
-    printf("input max value\n"); int max; scanf("%d", &max);
-    int *data;
-    srand(time(NULL));
+  setlocale(LC_CTYPE, "");
+  printf("input min value\n"); int min; scanf("%d", &min);
+  printf("input max value\n"); int max; scanf("%d", &max);
+  int *data;
+  srand(time(NULL));
 	int count = 100;
 	while(
 		count < 10000000){
