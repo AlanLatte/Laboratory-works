@@ -7,7 +7,8 @@ int data[20][20],
 
 void dfcLogic(int value) {
 	range[value]=1;
-	for (size_t i = 1; i <= n ; i++)
+	int i;
+	for (i = 1; i <= n ; i++)
 	if(data[value][i] && !range[i]) {
 		printf("\n %d 🠒 %d", value, i);
 		dfcLogic(i);
