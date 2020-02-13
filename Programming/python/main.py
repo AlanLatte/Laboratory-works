@@ -2,7 +2,7 @@
 from operations import *
 from algorithm import *
 from os import chdir
-
+from random import randint
 
 def main(resultFolder: str = "result") -> str:
     Array   =   ArrayOperation
@@ -12,39 +12,60 @@ def main(resultFolder: str = "result") -> str:
         resultFolder,
         presonalLink = "t.me/alanlatte"
     );chdir(resultFolder)
-
     File.write(
-        nums = bstSort(
+        data = quicksort(
+            array   =   Array.createArray(
+                RANGE)
+            ),\
+        typeOfSorting = quicksort.__name__,
+        reqursion   = True)
+    File.write(
+        data = binarySearch(
+            array   =   Array.createArray(
+                RANGE,
+                    search = True),
+            number  =   randint(0,RANGE)
+            ),\
+        typeOfSorting = binarySearch.__name__
+        )
+    File.write(
+        data = lpf(
+            number = randint(0, RANGE)
+            ),\
+        typeOfSorting = lpf.__name__
+        )
+    File.write(
+        data = bstSort(
             array   =   Array.createArray(
                 RANGE)
             ),\
         typeOfSorting = bstSort.__name__
         )
     File.write(
-        nums = bubbleSort(
+        data = bubbleSort(
             array   =    Array.createArray(
                 RANGE)
             ),\
         typeOfSorting = bubbleSort.__name__
         )
     File.write(
-        nums = insertionSorting(
+        data = insertionSorting(
             array   =    Array.createArray(
-          RANGE)
+                RANGE)
             ),\
         typeOfSorting = insertionSorting.__name__
         )
     File.write(
-        nums = radixSort(
+        data = radixSort(
             array   =    Array.createArray(
-          RANGE)
+                RANGE)
             ),\
         typeOfSorting = radixSort.__name__
         )
     File.write(
-        nums = selectionSort(
+        data = selectionSort(
             array   =    Array.createArray(
-          RANGE),\
+                RANGE),\
             range_ =   RANGE
             ),\
         typeOfSorting = selectionSort.__name__

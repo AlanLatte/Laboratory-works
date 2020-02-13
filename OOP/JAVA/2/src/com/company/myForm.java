@@ -3,7 +3,8 @@ package com.company;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.concurrent.atomic.AtomicReference;
+
+import static com.company.Main.result;
 
 public class myForm {
     private JPanel myFrame;
@@ -55,17 +56,7 @@ public class myForm {
     }
 
     private String calculate(float x, float y) {
-        AtomicReference<String> result = new AtomicReference<>("");
-        if (x > 0 && y > 0) {
-            if ((x * x >= (0.5 - y * y)) && (x * x <= 1.0 - y * y)) {
-                result.set("TARGET!");
-            } else {
-                result.set("PAST!");
-            }
-        } else {
-            result.set("PAST!");
-        }
-        return result.get();
+        return result(x, y);
     }
 
     public static void main(String[] args) {
