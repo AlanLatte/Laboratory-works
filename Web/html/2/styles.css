@@ -1,0 +1,72 @@
+a {
+  text-decoration: none;
+}
+a:hover {
+  color: red;
+}
+u {
+  text-transform: uppercase;
+}
+img.pale {
+  border: 3px double rgba(140,140,140,.76);
+}
+body{
+  background-image: url("https://wallpaperaccess.com/full/952192.jpg");
+  background-repeat: no-repeat;
+}
+
+.center {
+  text-align: center;
+}
+
+.menu{
+  list-style: none;
+  margin-left: 40%;
+  padding-left: 0;
+  border-bottom: 1px solid blue;
+  background-color: #d867ff;;
+  width: 20%;
+}
+
+ul.menu li a{
+  border-left: 15px solid #c217fe;
+  display: block;
+  border-top: 1px solid blue;
+}
+
+.menu a {
+  height: 30px;
+  line-height: 30px;
+}
+
+.textFlow {
+  position: relative;
+}
+.textFlow img{
+  padding-right: 13px;
+}
+.textFlow h2 span {
+  color: white;
+  padding: 0px 0px 20px 20px;
+  letter-spacing: 5px;
+  background: rgba(13,13,13,.35);
+  position: absolute;
+}
+.disp__ {
+  display: inline-block;
+}
+.disp___{
+  display: block;
+}
+i.apple{
+  font-size: 150px;
+}
+
+.column{
+  float: left;
+  width: 50%;
+}
+
+.bttn{
+  background: #00eb4e;
+}
