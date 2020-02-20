@@ -1,0 +1,157 @@
+*{margin: 0;padding: 0}
+
+a {
+	text-decoration: none;
+}
+a:hover {
+	color: red;
+}
+u {
+	text-transform: uppercase;
+}
+
+body{
+  background-image: url("https://wallpaperaccess.com/full/952192.jpg");
+  background-repeat: no-repeat;
+}
+
+
+i.apple{
+  font-size: 150px;
+}
+
+.column{
+  float: left;
+  width: 50%;
+}
+
+.bttn{
+  background: #00eb4e;
+}
+
+
+.wrapper{
+	display: grid;
+	/* grid-auto-rows: 1fr 7fr 2fr; */
+	grid-auto-rows: minmax(0,1fr) minmax(0,7fr) minmax(0,2fr);
+	grid-template-areas:
+		"top"
+		"middle"
+		"bottom";
+}
+
+.box {
+	padding: 10px;
+	border: 3px double rgba(140,140,140,.76);
+}
+
+
+
+.box > *{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.top{
+	display: inline-grid;
+	grid-area: top;
+	grid-auto-columns: 1fr 2fr 2fr;
+	grid-template-areas:
+		"logo search_ menu_"
+}
+
+.middle{
+	display: grid;
+	grid-area: middle;
+	grid-template: repeat(4, 1fr)/repeat(3,1fr);
+	grid-template-areas:
+		"form_ list_ image"
+		"title_ title_ image"
+		"title_ title_ table_"
+		"title_ title_ table_";
+}
+.bottom{
+	display: grid;
+	grid-area: bottom;
+	/* grid-auto-columns: repeat(4,1fr); ругается валидатор */
+	grid-auto-columns: 1fr 1fr 1fr 1fr;
+	grid-template-areas:
+		"box1 box2 box3 box4"
+}
+.box1{
+	grid-area: box1;
+}
+
+.box2{
+	grid-area: box2;
+}
+.box3{
+	grid-area: box3;
+}
+.box4{
+	grid-area: box4;
+}
+.logo{
+	grid-area: logo;
+}
+.search_{
+	grid-area: search_;
+}
+.menu_{
+	grid-area: menu_;
+
+}
+
+.menu_ > div > .menu{
+
+	list-style: none;
+  padding-left: 0;
+  border-bottom: 1px solid blue;
+  background-color: #d867ff;;
+  width: 40%;
+}
+.menu_ > div > ul.menu > li a{
+  border-left: 15px solid #c217fe;
+  display: block;
+  border-top: 1px solid blue;
+}
+
+.menu_ > div > .menu a {
+  height: 30px;
+  line-height: 30px;
+}
+
+.form_{
+	grid-area: form_;
+}
+
+.list_{
+	grid-area: list_;
+}
+.image{
+	grid-area: image;
+}
+.image > div > img{
+  padding-right: 13px;
+}
+.image > div > h2 span {
+	background-color: rgba(252,24,24,1);
+  color: white;
+  letter-spacing: 5px;
+  background: rgba(13,13,13,.35);
+  position: absolute;
+}
+
+.title_{
+	grid-area: title_;
+}
+
+.title > div.textFlow .disp__ {
+  display: inline-block;
+}
+.title > div.textFlow .disp___{
+  display: block;
+}
+.table_{
+	grid-area: table_;
+}
