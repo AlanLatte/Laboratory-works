@@ -18,7 +18,7 @@ public class Main {
         List<List<Integer>> array = createMatrix(columns, rows);
         HashMap<String, String> resultMap = searchZeroColumns(array, columns);
         System.out.println(readFromFile());
-        if (resultMap.containsKey("RESULT")){
+        if (resultMap.containsKey("RESULT")) {
             System.out.println("Map of HS indexes: " + resultMap.get("INDEXES"));
         }
 
@@ -36,16 +36,15 @@ public class Main {
             if (!array.contains(1)) {
                 if (!resultMap.containsKey("RESULT")) {
                     resultMap.put("RESULT", "true");
-                    resultIndex.append(index + 1).append("; ");
-                } else {
-                    resultIndex.append(index + 1).append("; ");
                 }
+                resultIndex.append(index + 1).append("; ");
             }
         });
         resultMap.put("INDEXES", resultIndex.toString());
         return resultMap;
 
     }
+
     private static void WriteToFile(List<List<Integer>> matrix) throws IOException {
         StringBuilder fileContent = new StringBuilder();
         String fileName = "matrix.txt";
@@ -65,11 +64,12 @@ public class Main {
         FileInputStream inputStream = new FileInputStream(fileName);
         StringBuilder result = new StringBuilder();
         int i;
-        while((i=inputStream.read())!= -1){
+        while ((i = inputStream.read()) != -1) {
             result.append((char) i);
         }
         return result.toString();
     }
+
     static List<List<Integer>> createMatrix(int columns, int rows) throws IOException {
         Random random = new Random();
         List<List<Integer>> matrix = new ArrayList<>();
