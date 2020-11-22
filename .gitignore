@@ -1,4 +1,8 @@
 # Byte-compiled / optimized / DLL files
+.idea
+ordfrac.in
+ordfrac.out
+matrix.txt
 __pycache__/
 *.py[cod]
 *$py.class
